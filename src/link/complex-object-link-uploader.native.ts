@@ -1,11 +1,9 @@
-'use strict';
-Object.defineProperty(exports, '__esModule', { value: true });
 /*!
  * Copyright 2017-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0
  */
-var S3 = require('aws-sdk/clients/s3');
-exports.default = function (fileField, _a) {
+import * as S3 from 'aws-sdk/clients/s3';
+export default (fileField, { _a }) => {
 	var credentials = _a.credentials;
 	var Bucket = fileField.bucket,
 		Key = fileField.key,
@@ -17,7 +15,7 @@ exports.default = function (fileField, _a) {
 		region: region,
 	});
 	return new Promise((resolve, reject) => {
-		fetch(fileField.localUri).then((data) => {
+		fetch(fileField.localUri).then((data: any) => {
 			resolve(
 				s3
 					.upload({

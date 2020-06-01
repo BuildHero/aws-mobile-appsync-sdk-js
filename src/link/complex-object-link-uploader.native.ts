@@ -3,8 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 import * as S3 from 'aws-sdk/clients/s3';
-export default (fileField, { _a }) => {
-	var credentials = _a.credentials;
+export default (fileField, { credentials }) => {
 	var Bucket = fileField.bucket,
 		Key = fileField.key,
 		region = fileField.region,
